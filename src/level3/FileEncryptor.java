@@ -22,7 +22,6 @@ public class FileEncryptor {
     public FileEncryptor() throws NoSuchAlgorithmException {
         this.secretKey = generateKey();
         this.iv = generateIV();
-//        this.outputFile = outputFile;
     }
 
     // Generate a 128-bit AES key

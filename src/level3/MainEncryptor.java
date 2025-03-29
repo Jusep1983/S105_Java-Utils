@@ -21,6 +21,7 @@ public class MainEncryptor {
         String decryptedFile = loadProperties("decryptedFile");
 
         FileEncryptor fileEncryptor = null;
+
         try {
             fileEncryptor = new FileEncryptor();
         } catch (NoSuchAlgorithmException e) {

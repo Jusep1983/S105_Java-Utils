@@ -10,9 +10,12 @@ config.properties, el programa las obtiene de esta carpeta.
     "C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
 
 ## Para compilar los archivos ejecuto el comando:
+
     javac -d out src\level2\*.java
+
  Este comando creará, a partir de los archivos fuente .java, los archivos compilados .class
  listos para ejecutar en la ruta
+
  C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils\out\level2
 
 
