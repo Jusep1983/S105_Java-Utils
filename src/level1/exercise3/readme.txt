@@ -5,7 +5,11 @@
 
 ## Mediante el método writeNewList() guarda la lista en el archivo directoryList.txt
 
-## Para compilar los archivos uso el comando:
+## En la terminal situado en el directorio de trabajo del proyecto, en mi caso:
+
+    "C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
+
+## Para compilar los archivos ejecuto el comando:
 
     javac -d out src\level1\exercise3\*.java
 
@@ -14,6 +18,7 @@
     java -cp out level1.exercise3.MainFruits3
 
 ## Resultado:
+
     Guarda el siguiente texto en el archivo directoryList.txt:
 
     FIL src\level1\exercise4\directoryList.txt 27-03-2025 02:11:17

@@ -17,6 +17,7 @@ public class Fruits {
         ArrayList<String> contentOfFileTxt = new ArrayList<>();
         File file = new File(fullPath);
 
+        System.out.println("Contenido del archivo " + fullPath + ": ");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -24,7 +25,6 @@ public class Fruits {
                     contentOfFileTxt.add(line);
                 }
             }
-            System.out.println("Contenido del archivo " + fullPath + ": ");
             for (String content : contentOfFileTxt) {
                 System.out.println("\t" + content);
             }

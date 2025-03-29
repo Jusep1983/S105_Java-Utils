@@ -6,7 +6,7 @@ public class MainFruits4 {
 
         Fruits fr = new Fruits();
 
-        fr.showContentOfFileTxt("fruits.txt");
+        fr.showContentOfFileTxt("fruitsLvl2.txt");
         fr.showContentOfFileTxt("directoryList.txt");
         fr.showContentOfFileTxt("empty.txt");
         fr.showContentOfFileTxt("archivoInventado.txt");

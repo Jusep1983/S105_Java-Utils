@@ -1,8 +1,8 @@
-## Compilar todos los archivos del exercise 2:
+## Ejercicio 2:
 
-Situado en el directorio de trabajo del proyecto:
+## En la terminal situado en el directorio de trabajo del proyecto, en mi caso:
 
-"C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
+    "C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
 
 ## Compilo todos los archivos .java del package exercise2,
    esto me crea los archivos .class en la carpeta out\:

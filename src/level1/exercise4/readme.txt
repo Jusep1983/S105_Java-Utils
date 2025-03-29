@@ -1,5 +1,9 @@
 ## Ejercicio 4:
 
+## En la terminal situado en el directorio de trabajo del proyecto, en mi caso:
+
+    "C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
+
 ## Compilar archivos:
 
      javac -d out src\level1\exercise4\*.java

@@ -1,7 +1,8 @@
-## Compilar todos los archivos del exercise 1:
-## Situado en el directorio de trabajo del proyecto:
+## Ejercicio 1:
 
-"C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
+## En la terminal situado en el directorio de trabajo del proyecto, en mi caso:
+
+    "C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils>"
 
 ## Compilo todos los archivos del package exercise1 con el siguiente comando:
 
@@ -9,7 +10,7 @@
 
 (Todos los archivos de código fuente se encuentran en este directorio,
 en el caso de que esten conectados dentro del código,
-debería compilarlos tambien antes de ejecutar el main)
+debería compilarlos tambien desde su ubicación antes de ejecutar el main)
 
 ## Ejecuto el "MainFruits":
 

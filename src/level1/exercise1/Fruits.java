@@ -9,7 +9,7 @@ public class Fruits {
 
     public Fruits() {
         this.fruits = new ArrayList<String>();
-        this.filePath = "src" + File.separator + "level1" + File.separator + "exercise1" + File.separator + "fruits.txt";
+        this.filePath = "src" + File.separator + "level1" + File.separator + "exercise1" + File.separator + "fruitsLvl2.txt";
     }
 
     public ArrayList<String> getFruits() {
