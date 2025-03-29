@@ -1,34 +1,52 @@
 package level3;
 
-
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
+import java.io.*;
+import java.security.*;
+import java.util.Properties;
 
 public class FileEncryptor {
     private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
 
-    private SecretKey secretKey;
-    private IvParameterSpec iv;
+    private final SecretKey SECRET_KEY;
+    private final IvParameterSpec IV;
 
     public FileEncryptor() throws NoSuchAlgorithmException {
-        this.secretKey = generateKey();
-        this.iv = generateIV();
+        this.SECRET_KEY = generateKey();
+        this.IV = generateIV();
+    }
+
+    public static String loadProperties(String loadProperty) {
+        String nameProperty = "";
+        try {
+            FileInputStream fis = new FileInputStream(
+                    "src" + File.separator + "level3" + File.separator + "config.properties"
+            );
+            Properties props = new Properties();
+            props.load(fis);
+            nameProperty = props.getProperty(loadProperty);
+
+            if (nameProperty == null) {
+                throw new FileNotFoundException("en el archivo de configuración: Propiedades faltantes");
+            }
+        } catch (IOException e) {
+            System.out.println("Error " + e.getMessage());
+        }
+        return nameProperty;
     }
 
     // Generate a 128-bit AES key
-    private SecretKey generateKey() throws NoSuchAlgorithmException {
-        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
-        keyGenerator.init(128);
-        return keyGenerator.generateKey();
+    private SecretKey generateKey() throws InvalidParameterException {
+        try {
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
+            keyGenerator.init(128);
+            return keyGenerator.generateKey();
+        } catch (InvalidParameterException | NoSuchAlgorithmException e) {
+            System.out.println("Error al generar la clave: " + e.getMessage());
+            return null;
+        }
     }
 
     // Generate a random 16-byte IV
@@ -39,10 +57,10 @@ public class FileEncryptor {
     }
 
     public void encryptFile(String inputFile, String outputFile) {
-        Cipher cipher = null;
+        Cipher cipher;
         try {
             cipher = Cipher.getInstance(TRANSFORMATION);
-            cipher.init(Cipher.ENCRYPT_MODE, this.secretKey, this.iv);
+            cipher.init(Cipher.ENCRYPT_MODE, this.SECRET_KEY, this.IV);
 
             try (FileInputStream fis = new FileInputStream(inputFile);// Leer el archivo como bytes
                  FileOutputStream fos = new FileOutputStream(outputFile);// Escribir archivo encriptado
@@ -56,8 +74,8 @@ public class FileEncryptor {
             }
             System.out.println("Archivo encriptado correctamente: " + outputFile);
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
-                 InvalidKeyException | IOException e) {
-            e.printStackTrace();
+                 InvalidKeyException | NullPointerException | IOException e) {
+            System.out.println("Error al encriptar el archivo: " + e.getMessage());
         }
     }
 
@@ -65,7 +83,7 @@ public class FileEncryptor {
         try {
             // Obtener el Cipher para AES con CBC y PKCS5Padding
             Cipher cipher = Cipher.getInstance(TRANSFORMATION);
-            cipher.init(Cipher.DECRYPT_MODE, this.secretKey, this.iv);
+            cipher.init(Cipher.DECRYPT_MODE, this.SECRET_KEY, this.IV);
 
             try (FileInputStream fis = new FileInputStream(inputFile);  // Leer archivo encriptado como bytes
                  FileOutputStream fos = new FileOutputStream(outputFile);  // Escribir archivo desencriptado
@@ -78,10 +96,10 @@ public class FileEncryptor {
                 }
             }
             System.out.println("Archivo desencriptado correctamente: " + outputFile);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
+                 InvalidKeyException | NullPointerException | IOException e) {
+            System.out.println("Error al desencriptar el archivo: " + e.getMessage());
         }
     }
-
 
 }
