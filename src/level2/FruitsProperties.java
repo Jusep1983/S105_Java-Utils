@@ -21,18 +21,22 @@ public class FruitsProperties {
         return filePath;
     }
 
-    public void loadProperties() {
+    public void loadProperties() throws RuntimeException{
         try {
             FileInputStream fis = new FileInputStream("src" + File.separator + "level2" + File.separator + "config.properties");
             Properties props = new Properties();
             props.load(fis);
             this.filePath = props.getProperty("inputDirectory");
             this.fileName = props.getProperty("outputFile");
-            if (this.filePath == null || this.fileName == null) {
-                throw new FileNotFoundException("en el archivo de configuración: Propiedades faltantes");
-            }
+            checkProperties();
         } catch (IOException e) {
             System.out.println("Error " + e.getMessage());
+        }
+    }
+
+    private void checkProperties() throws FileNotFoundException {
+        if (this.filePath == null || this.fileName == null) {
+            throw new FileNotFoundException("en el archivo de configuración: Propiedades faltantes");
         }
     }
 
@@ -64,8 +68,8 @@ public class FruitsProperties {
                 writer.write(file);
                 writer.newLine();
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | RuntimeException e) {
+            System.out.println("Error, " + e.getMessage());
         }
     }
 

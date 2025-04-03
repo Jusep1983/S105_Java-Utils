@@ -6,11 +6,11 @@ import java.util.ArrayList;
 public class MainFruits3 {
 
     public static void main(String[] args) {
-
-        Fruits fr = new Fruits();
+        InputOutMethods inputOutput = new InputOutMethods();
+        Fruits fruits = new Fruits();
         ArrayList<String> filesList = new ArrayList<>();
-        filesList = fr.listDirectory(new File(fr.getFilePath()));
-        fr.writeNewList(filesList);
+        filesList = inputOutput.listDirectory(new File(fruits.getFilePath()));
+        inputOutput.writeNewList(filesList, fruits.getFilePath());
 
     }
 

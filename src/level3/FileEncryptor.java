@@ -75,7 +75,7 @@ public class FileEncryptor {
             System.out.println("Archivo encriptado correctamente: " + outputFile);
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
                  InvalidKeyException | NullPointerException | IOException e) {
-            System.out.println("Error al encriptar el archivo: " + e.getMessage());
+            System.out.println("Error al encriptar el archivo " + e.getMessage());
         }
     }
 
@@ -98,7 +98,7 @@ public class FileEncryptor {
             System.out.println("Archivo desencriptado correctamente: " + outputFile);
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
                  InvalidKeyException | NullPointerException | IOException e) {
-            System.out.println("Error al desencriptar el archivo: " + e.getMessage());
+            System.out.println("Error al desencriptar el archivo " + e.getMessage());
         }
     }
 

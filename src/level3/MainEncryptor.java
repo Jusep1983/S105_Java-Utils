@@ -14,11 +14,11 @@ public class MainEncryptor {
 
         try {
             fileEncryptor = new FileEncryptor();
+            fileEncryptor.encryptFile(inputFile, encryptedFile);
+            fileEncryptor.decryptFile(encryptedFile, decryptedFile);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error," + e.getMessage());
         }
-        fileEncryptor.encryptFile(inputFile, encryptedFile);
-        fileEncryptor.decryptFile(encryptedFile, decryptedFile);
     }
 
 }

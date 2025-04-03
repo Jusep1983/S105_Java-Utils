@@ -33,9 +33,9 @@ public class Fruits {
             }
             System.out.println();
         } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error, archivo no encontrado" + e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error, " + e.getMessage());
         }
     }
 

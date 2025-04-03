@@ -21,11 +21,11 @@
 
     Guarda el siguiente texto en el archivo directoryList.txt:
 
-    FIL src\level1\exercise4\directoryList.txt 27-03-2025 02:11:17
-    FIL src\level1\exercise4\Fruits.java 27-03-2025 02:11:16
-    FIL src\level1\exercise4\fruits.txt 25-03-2025 10:57:15
-    FIL src\level1\exercise4\ListEmpty.java 27-03-2025 02:02:36
-    FIL src\level1\exercise4\MainFruits4.java 27-03-2025 02:02:36
-    FIL src\level1\exercise4\readme.txt 27-03-2025 01:30:40
-    DIR src\level1\exercise4\sampleFolder 27-03-2025 01:57:50
+    FIL src\level1\exercise3\directoryList.txt 03-04-2025 11:21:41
+    FIL src\level1\exercise3\Fruits.java 03-04-2025 11:24:12
+    FIL src\level1\exercise3\fruits.txt 25-03-2025 10:57:15
+    FIL src\level1\exercise3\InputOutMethods.java 03-04-2025 11:24:12
+    FIL src\level1\exercise3\MainFruits3.java 03-04-2025 11:24:12
+    FIL src\level1\exercise3\readme.txt 03-04-2025 11:21:11
+    DIR src\level1\exercise3\sampleFolder 27-03-2025 01:55:15
 

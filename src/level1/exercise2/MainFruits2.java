@@ -6,9 +6,9 @@ public class MainFruits2 {
 
     public static void main(String[] args) {
 
-        Fruits fr = new Fruits();
-
-        fr.listDirectory(new File(fr.getFilePath()));
+        ListDirectory listDirectory = new ListDirectory();
+        Fruits fruits = new Fruits();
+        listDirectory.listDirectory(new File(fruits.getFilePath()));
 
     }
 

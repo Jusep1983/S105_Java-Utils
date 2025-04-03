@@ -9,7 +9,7 @@ public class Fruits {
 
     public Fruits() {
         this.fruits = new ArrayList<String>();
-        this.filePath = "src" + File.separator + "level1" + File.separator + "exercise1" + File.separator + "fruitsLvl2.txt";
+        this.filePath = "src" + File.separator + "level1" + File.separator + "exercise1" + File.separator + "fruits.txt";
     }
 
     public ArrayList<String> getFruits() {
@@ -27,9 +27,9 @@ public class Fruits {
                 numberLine++;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo no encontrado: " /*+ this.filePath + " "*/ + e.getMessage());
+            System.out.println("Archivo no encontrado: " + e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error, " + e.getMessage());
         }
     }
 
