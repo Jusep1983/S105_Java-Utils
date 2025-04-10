@@ -8,9 +8,9 @@
 
      javac -d out src\level1\exercise5\*.java
 
-## Ejecutar MainManuelSerial :
+## Ejecutar MainEx5 :
 
-     java -cp out level1.exercise5.MainManuelSerial
+     java -cp out level1.exercise5.MainEx5
 
 ## Resultado:
 

@@ -1,5 +1,6 @@
 package level3;
 
+import java.security.InvalidParameterException;
 import java.security.NoSuchAlgorithmException;
 
 public class MainEncryptor {
@@ -16,8 +17,8 @@ public class MainEncryptor {
             fileEncryptor = new FileEncryptor();
             fileEncryptor.encryptFile(inputFile, encryptedFile);
             fileEncryptor.decryptFile(encryptedFile, decryptedFile);
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println("Error," + e.getMessage());
+        } catch (NoSuchAlgorithmException | InvalidParameterException e) {
+            System.err.println("Error, " + e.getMessage());
         }
     }
 

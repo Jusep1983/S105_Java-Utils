@@ -27,26 +27,24 @@ public class FileEncryptor {
             Properties props = new Properties();
             props.load(fis);
             nameProperty = props.getProperty(loadProperty);
-
-            if (nameProperty == null) {
-                throw new FileNotFoundException("en el archivo de configuración: Propiedades faltantes");
-            }
+            checkProperties(nameProperty);
         } catch (IOException e) {
-            System.out.println("Error " + e.getMessage());
+            System.err.println("Error " + e.getMessage());
         }
         return nameProperty;
     }
 
+    public static void checkProperties(String nameProperty) throws FileNotFoundException {
+        if (nameProperty == null) {
+            throw new FileNotFoundException("en el archivo de configuración, propiedades faltantes");
+        }
+    }
+
     // Generate a 128-bit AES key
-    private SecretKey generateKey() throws InvalidParameterException {
-        try {
+    private SecretKey generateKey() throws NoSuchAlgorithmException ,InvalidParameterException {
             KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
             keyGenerator.init(128);
             return keyGenerator.generateKey();
-        } catch (InvalidParameterException | NoSuchAlgorithmException e) {
-            System.out.println("Error al generar la clave: " + e.getMessage());
-            return null;
-        }
     }
 
     // Generate a random 16-byte IV
@@ -73,9 +71,8 @@ public class FileEncryptor {
                 }
             }
             System.out.println("Archivo encriptado correctamente: " + outputFile);
-        } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
-                 InvalidKeyException | NullPointerException | IOException e) {
-            System.out.println("Error al encriptar el archivo " + e.getMessage());
+        } catch (IOException | GeneralSecurityException | NullPointerException e) {
+            System.err.println("Error al encriptar el archivo " + e.getMessage());
         }
     }
 
@@ -96,9 +93,8 @@ public class FileEncryptor {
                 }
             }
             System.out.println("Archivo desencriptado correctamente: " + outputFile);
-        } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | NoSuchPaddingException |
-                 InvalidKeyException | NullPointerException | IOException e) {
-            System.out.println("Error al desencriptar el archivo " + e.getMessage());
+        } catch (IOException | GeneralSecurityException | NullPointerException e) {
+            System.err.println("Error al desencriptar el archivo " + e.getMessage());
         }
     }
 

@@ -1,20 +1,30 @@
 package level1.exercise3;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-public class InputOutMethods {
+public class DirectoryUtils {
+    private ArrayList<String> directoryList;
 
-    public ArrayList<String> listDirectory(File filePath) {
+    public DirectoryUtils() {
+        this.directoryList = new ArrayList<>();
+    }
+
+    public ArrayList<String> getDirectoryList() {
+        return this.directoryList;
+    }
+
+    public void setDirectoryList(ArrayList<String> directoryList) {
+        this.directoryList = directoryList;
+    }
+
+    public ArrayList<String> buildDirectoryListing(File directory) {
         ArrayList<String> filesList = new ArrayList<>();
-        if (filePath.isDirectory()) {
-            File[] files = filePath.listFiles();
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
             if (files == null) {
                 System.out.println("El directorio no existe");
             } else if (files.length == 0) {
@@ -32,10 +42,10 @@ public class InputOutMethods {
         return filesList;
     }
 
-    public void writeNewList(ArrayList<String> filesList, String filePath) {
-        String fullPath = filePath + File.separator + "directoryList.txt";
+    public void writeNewListInFile(ArrayList<String> filesList, String directoryName) {
+        String fullPath = directoryName + File.separator + "directoryList.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fullPath))) {
-            for (String file: filesList) {
+            for (String file : filesList) {
                 writer.write(file);
                 writer.newLine();
             }
@@ -43,4 +53,5 @@ public class InputOutMethods {
             System.out.println("Error, " + e.getMessage());
         }
     }
+
 }

@@ -13,19 +13,17 @@
 
     javac -d out src\level1\exercise3\*.java
 
-## Para Ejecutar MainFruits3:
+## Para Ejecutar MainEx3:
 
-    java -cp out level1.exercise3.MainFruits3
+    java -cp out level1.exercise3.MainEx3
 
 ## Resultado:
 
     Guarda el siguiente texto en el archivo directoryList.txt:
 
-    FIL src\level1\exercise3\directoryList.txt 03-04-2025 11:21:41
-    FIL src\level1\exercise3\Fruits.java 03-04-2025 11:24:12
+    FIL src\level1\exercise3\directoryList.txt 10-04-2025 00:15:46
+    FIL src\level1\exercise3\DirectoryUtils.java 10-04-2025 00:15:45
     FIL src\level1\exercise3\fruits.txt 25-03-2025 10:57:15
-    FIL src\level1\exercise3\InputOutMethods.java 03-04-2025 11:24:12
-    FIL src\level1\exercise3\MainFruits3.java 03-04-2025 11:24:12
-    FIL src\level1\exercise3\readme.txt 03-04-2025 11:21:11
+    FIL src\level1\exercise3\MainEx3.java 10-04-2025 00:15:45
+    FIL src\level1\exercise3\readme.txt 10-04-2025 00:01:50
     DIR src\level1\exercise3\sampleFolder 27-03-2025 01:55:15
-

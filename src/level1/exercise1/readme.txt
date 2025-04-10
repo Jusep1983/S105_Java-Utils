@@ -9,12 +9,12 @@
     javac -d out src\level1\exercise1\*.java
 
 (Todos los archivos de código fuente se encuentran en este directorio,
-en el caso de que esten conectados dentro del código,
-debería compilarlos tambien desde su ubicación antes de ejecutar el main)
+en el caso de que estén conectados dentro del código,
+debería compilarlos también desde su ubicación antes de ejecutar el main)
 
-## Ejecuto el "MainFruits":
+## Ejecuto el "MainEx1":
 
-    java -cp out level1.exercise1.MainFruits
+    java -cp out level1.exercise1.MainEx1
 
 ## Me devuelve por terminal la lista ordenada:
 

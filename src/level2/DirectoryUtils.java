@@ -2,48 +2,43 @@ package level2;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
 
-public class FruitsProperties {
-    private ArrayList<String> fruits;
-    private String filePath;
-    private String fileName;
+public class DirectoryUtils {
+    private String inputDirectory;
+    private String outputFile;
 
-    public FruitsProperties() {
-        this.fruits = new ArrayList<>();
+    public DirectoryUtils() {
         loadProperties();
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getInputDirectory() {
+        return inputDirectory;
     }
 
-    public void loadProperties() throws RuntimeException{
+    public void loadProperties() {
         try {
             FileInputStream fis = new FileInputStream("src" + File.separator + "level2" + File.separator + "config.properties");
             Properties props = new Properties();
             props.load(fis);
-            this.filePath = props.getProperty("inputDirectory");
-            this.fileName = props.getProperty("outputFile");
+            this.inputDirectory = props.getProperty("inputDirectory");
+            this.outputFile = props.getProperty("outputFile");
             checkProperties();
-        } catch (IOException e) {
-            System.out.println("Error " + e.getMessage());
+        } catch (IllegalArgumentException | IOException | MissingOutputFileException e) {
+            System.err.println("Error, " + e.getMessage());
         }
     }
 
-    private void checkProperties() throws FileNotFoundException {
-        if (this.filePath == null || this.fileName == null) {
-            throw new FileNotFoundException("en el archivo de configuración: Propiedades faltantes");
+    private void checkProperties() {
+        if (this.outputFile == null) {
+            throw new MissingOutputFileException("en el archivo de configuración falta archivo de destino");
         }
     }
 
-    public ArrayList<String> listDirectory(File filePath) {
+    public ArrayList<String> buildDirectoryListing(File directory) {
         ArrayList<String> filesList = new ArrayList<>();
-        if (filePath.isDirectory()) {
-            File[] files = filePath.listFiles();
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
             if (files == null) {
                 System.out.println("El directorio no existe");
             } else if (files.length == 0) {
@@ -61,15 +56,15 @@ public class FruitsProperties {
         return filesList;
     }
 
-    public void writeNewList(ArrayList<String> filesList) {
-        String fullPath = this.filePath + File.separator + "directoryList.txt";
+    public void writeListingToFile(List<String> filesList) {
+        String fullPath = this.inputDirectory + File.separator + this.outputFile;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fullPath))) {
             for (String file : filesList) {
                 writer.write(file);
                 writer.newLine();
             }
-        } catch (IOException | RuntimeException e) {
-            System.out.println("Error, " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error, " + e.getMessage());
         }
     }
 

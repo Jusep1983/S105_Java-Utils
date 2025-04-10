@@ -1,23 +1,21 @@
 package level2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class MainProperties {
 
-    public static void main(String[] args) throws FileNotFoundException, RuntimeException {
+    public static void main(String[] args) {
 
-        FruitsProperties fruitslvl2 = new FruitsProperties();
+        DirectoryUtils directoryUtils = new DirectoryUtils();
 
         ArrayList<String> filesList = new ArrayList<>();
         try {
-            filesList = fruitslvl2.listDirectory(new File(fruitslvl2.getFilePath()));
+            filesList = directoryUtils.buildDirectoryListing(new File(directoryUtils.getInputDirectory()));
         } catch (RuntimeException e) {
-            System.out.println("Error, " + e.getMessage());
+            System.err.println("Error, propiedad inputDirectory no encontrada. ");
         }
-        fruitslvl2.writeNewList(filesList);
-
+        directoryUtils.writeListingToFile(filesList);
     }
 
 }

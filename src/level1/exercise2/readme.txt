@@ -9,16 +9,15 @@
 
     javac -d out src\level1\exercise2\*.java
 
-## Ejecuto el "MainFruits2.class" del ejercicio 2 ubicado en la carpeta out\ mediante el comando:
+## Ejecuto el "MainEx2.class" del ejercicio 2 ubicado en la carpeta out\ mediante el comando:
 
-    java -cp out level1.exercise2.MainFruits2
+    java -cp out level1.exercise2.MainEx2
 
 ## Me devuelve por terminal:
 
-    FIL src\level1\exercise2\Fruits.java 03-04-2025 11:12:36
+    FIL src\level1\exercise2\DirectoryUtils.java 09-04-2025 23:42:39
     FIL src\level1\exercise2\fruits.txt 25-03-2025 10:57:15
-    FIL src\level1\exercise2\ListDirectory.java 03-04-2025 11:12:36
-    FIL src\level1\exercise2\MainFruits2.java 03-04-2025 11:12:36
-    FIL src\level1\exercise2\readme.txt 28-03-2025 15:42:05
+    FIL src\level1\exercise2\MainEx2.java 09-04-2025 23:42:39
+    FIL src\level1\exercise2\readme.txt 09-04-2025 23:42:39
     DIR src\level1\exercise2\sampleFolder 27-03-2025 01:53:24
 

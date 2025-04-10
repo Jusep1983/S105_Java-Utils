@@ -19,7 +19,7 @@ config.properties, el programa las obtiene de esta carpeta.
  C:\Users\JosePC\Documents\IT_ACADEMY\EspecialitzacioJavaBackEnd\Sprint1\S105_Java Utils\out\level2
 
 
-## Para Ejecutar MainFruits3:
+## Para Ejecutar MainProperties:
 
     java -cp out level2.MainProperties
 
@@ -30,11 +30,12 @@ Ejecutará los archivos .class compilados en la carpeta out\level2
     la lista y el archivo en el cual la guarda.
     Despues, guarda el siguiente texto en el archivo obtenido que es "directoryList.txt":
 
-    FIL src\level2\config.properties 29-03-2025 03:57:31
-    FIL src\level2\directoryList.txt 29-03-2025 04:12:10
+    FIL src\level2\config.properties 10-04-2025 02:25:06
+    FIL src\level2\directoryList.txt 10-04-2025 02:25:47
+    FIL src\level2\DirectoryUtils.java 10-04-2025 02:28:17
     FIL src\level2\fruitsLvl2.txt 25-03-2025 10:57:15
-    FIL src\level2\FruitsProperties.java 29-03-2025 03:57:31
     DIR src\level2\joseFolder 29-03-2025 03:55:12
-    FIL src\level2\MainProperties.java 29-03-2025 03:57:31
-    FIL src\level2\readme.txt 29-03-2025 04:11:35
+    FIL src\level2\MainProperties.java 10-04-2025 02:19:59
+    FIL src\level2\MissingOutputFileException.java 10-04-2025 02:28:17
+    FIL src\level2\readme.txt 10-04-2025 02:27:13
     DIR src\level2\sampleFolder 29-03-2025 03:47:18

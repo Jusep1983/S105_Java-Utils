@@ -2,7 +2,7 @@ package level1.exercise5;
 
 import java.io.*;
 
-public class SerializeObjects {
+public class SerializePerson {
 
     public static void serializeToManuel(String filePath, Person person) {
 
@@ -56,4 +56,5 @@ public class SerializeObjects {
             System.out.println("El programa no ha podido ejecutarse");
         }
     }
+
 }
